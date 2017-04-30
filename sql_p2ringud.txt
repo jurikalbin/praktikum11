@@ -1,20 +1,19 @@
 # Luua uus tabel 'loomaaed'
-create table 12103979_loomaaed (
+CREATE TABLE 12103979_loomaaed (
     id integer primary key auto_increment,
     nimi varchar(255),
     vanus integer,
     liik varchar(255),
-    puur integer
-);
+    puur integer);
 
 # Täita eelnevalt loodud tabel vähemalt 5 reaga. 
-insert into 12103979_loomaaed (nimi, vanus, liik, puur) values 	
+INSERT INTO 12103979_loomaaed (nimi, vanus, liik, puur) VALUES 	
 	('Alfa','1','tiiger','2'),
-    ('Beta','22','lõvi','11'),
-    ('Gamma','2','tiiger','2'),
-    ('Delta','12','tiiger','1'),
-    ('Eta','3','lõvi','12'),
-    ('Theta','55','elevant','31'),
+	('Beta','22','lõvi','11'),
+	('Gamma','2','tiiger','2'),
+	('Delta','12','tiiger','1'),
+	('Eta','3','lõvi','12'),
+	('Theta','55','elevant','31'),
 	('Iota','54','elevant','31'),
 	('Kappa','11','karu','41'),
 	('Mu','5','rebane','51'),
@@ -30,4 +29,4 @@ insert into 12103979_loomaaed (nimi, vanus, liik, puur) values
 	##Hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count )
 		SELECT puur, count(*) as LoomiPuuris FROM 12103979_loomaaed Group by puur;
 	##Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra
-		Update 12103979_loomaaed set vanus=vanus+1;
+		UPDATE 12103979_loomaaed SET vanus=vanus+1;
