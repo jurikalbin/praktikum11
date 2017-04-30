@@ -1,0 +1,33 @@
+# Luua uus tabel 'loomaaed'
+create table 12103979_loomaaed (
+    id integer primary key auto_increment,
+    nimi varchar(255),
+    vanus integer,
+    liik varchar(255),
+    puur integer
+);
+
+# Täita eelnevalt loodud tabel vähemalt 5 reaga. 
+insert into 12103979_loomaaed (nimi, vanus, liik, puur) values 	
+	('Alfa','1','tiiger','2'),
+    ('Beta','22','lõvi','11'),
+    ('Gamma','2','tiiger','2'),
+    ('Delta','12','tiiger','1'),
+    ('Eta','3','lõvi','12'),
+    ('Theta','55','elevant','31'),
+	('Iota','54','elevant','31'),
+	('Kappa','11','karu','41'),
+	('Mu','5','rebane','51'),
+	('Nu','6','rebane','52'),
+	('Rho','4','hunt','61'),
+	('Tau','8','jänes','71');
+	
+#Koostada järgnevad päringud:
+	##Hankida kõigi mingis ühes kindlas puuris elavate loomade nimi ja puuri number
+		SELECT nimi, puur FROM 12103979_loomaaed WHERE puur=2;
+	##Hankida vanima ja noorima looma vanused
+		SELECT min(vanus) as Noorim, max(vanus) as Vanim FROM 12103979_loomaaed;
+	##Hankida puuri number koos selles elavate loomade arvuga (vihjeks: group by ja count )
+		SELECT puur, count(*) as LoomiPuuris FROM 12103979_loomaaed Group by puur;
+	##Suurendada kõiki tabelis olevaid vanuseid 1 aasta võrra
+		Update 12103979_loomaaed set vanus=vanus+1;
